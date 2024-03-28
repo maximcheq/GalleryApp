@@ -36,6 +36,8 @@
 		61D573C12BB5862900D98AAE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 61D573C02BB5862900D98AAE /* SnapKit */; };
 		61D573C32BB5862900D98AAE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 61D573C22BB5862900D98AAE /* SnapKit-Dynamic */; };
 		61D573C62BB5886100D98AAE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573C52BB5886100D98AAE /* Constants.swift */; };
+		61D573C82BB58CCD00D98AAE /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573C72BB58CCD00D98AAE /* LoadingIndicatorView.swift */; };
+		61D573CA2BB5956F00D98AAE /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573C92BB5956F00D98AAE /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTitleLabel.swift; sourceTree = "<group>"; };
 		61D573BA2BB5805C00D98AAE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		61D573C52BB5886100D98AAE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		61D573C72BB58CCD00D98AAE /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		61D573C92BB5956F00D98AAE /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 			children = (
 				61D573B62BB57FC400D98AAE /* GalleryImageView.swift */,
 				61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */,
+				61D573C72BB58CCD00D98AAE /* LoadingIndicatorView.swift */,
+				61D573C92BB5956F00D98AAE /* FavoriteButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				61D573862BB56B8700D98AAE /* GalleryTabBarController.swift in Sources */,
 				61D573962BB56CD500D98AAE /* FavoritesListViewModel.swift in Sources */,
 				61D573B72BB57FC400D98AAE /* GalleryImageView.swift in Sources */,
+				61D573C82BB58CCD00D98AAE /* LoadingIndicatorView.swift in Sources */,
 				61D573B42BB57DD900D98AAE /* ImageCell.swift in Sources */,
 				61D573A82BB56FEB00D98AAE /* ImagesListEndpoint.swift in Sources */,
 				61D573BB2BB5805C00D98AAE /* UIView+Ext.swift in Sources */,
@@ -340,6 +347,7 @@
 				61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */,
 				61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */,
 				61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */,
+				61D573CA2BB5956F00D98AAE /* FavoriteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
