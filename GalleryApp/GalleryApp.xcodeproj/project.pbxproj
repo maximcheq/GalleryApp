@@ -22,7 +22,6 @@
 		61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */; };
 		61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5739D2BB56F3C00D98AAE /* APIService.swift */; };
 		61D573A02BB56F5F00D98AAE /* BaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */; };
-		61D573A22BB56F7F00D98AAE /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */; };
 		61D573A42BB56F9400D98AAE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A32BB56F9400D98AAE /* NetworkError.swift */; };
 		61D573A62BB56FB200D98AAE /* NetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */; };
 		61D573A82BB56FEB00D98AAE /* ImagesListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A72BB56FEB00D98AAE /* ImagesListEndpoint.swift */; };
@@ -36,6 +35,7 @@
 		61D573BE2BB5809800D98AAE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 61D573BD2BB5809800D98AAE /* Kingfisher */; };
 		61D573C12BB5862900D98AAE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 61D573C02BB5862900D98AAE /* SnapKit */; };
 		61D573C32BB5862900D98AAE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 61D573C22BB5862900D98AAE /* SnapKit-Dynamic */; };
+		61D573C62BB5886100D98AAE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573C52BB5886100D98AAE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,6 @@
 		61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListAssembly.swift; sourceTree = "<group>"; };
 		61D5739D2BB56F3C00D98AAE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEndpoint.swift; sourceTree = "<group>"; };
-		61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		61D573A32BB56F9400D98AAE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceFactory.swift; sourceTree = "<group>"; };
 		61D573A72BB56FEB00D98AAE /* ImagesListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListEndpoint.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		61D573B62BB57FC400D98AAE /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
 		61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTitleLabel.swift; sourceTree = "<group>"; };
 		61D573BA2BB5805C00D98AAE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		61D573C52BB5886100D98AAE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,7 @@
 				61D573882BB56BDB00D98AAE /* FavoritesListModule */,
 				61D573842BB56B6600D98AAE /* TabBarModule */,
 				61D5738A2BB56C1600D98AAE /* Resources */,
+				61D573C42BB5884F00D98AAE /* Utilities */,
 				61D5737D2BB5698F00D98AAE /* Info.plist */,
 			);
 			path = GalleryApp;
@@ -179,7 +180,6 @@
 				61D573AB2BB5703B00D98AAE /* ImagesList */,
 				61D5739D2BB56F3C00D98AAE /* APIService.swift */,
 				61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */,
-				61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */,
 				61D573A32BB56F9400D98AAE /* NetworkError.swift */,
 				61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */,
 			);
@@ -227,6 +227,14 @@
 				61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		61D573C42BB5884F00D98AAE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61D573C52BB5886100D98AAE /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D573A22BB56F7F00D98AAE /* NetworkConstants.swift in Sources */,
+				61D573C62BB5886100D98AAE /* Constants.swift in Sources */,
 				61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */,
 				61D573AA2BB5700800D98AAE /* ImagesListNetworkService.swift in Sources */,
 				61D573862BB56B8700D98AAE /* GalleryTabBarController.swift in Sources */,

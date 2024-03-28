@@ -62,7 +62,7 @@ final class ImagesListViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] images in
                 guard let self else { return }
-                imagesDataSource = images
+                imagesDataSource.append(contentsOf: images)
                 
                 updateData()
             }
@@ -106,7 +106,9 @@ final class ImagesListViewController: UIViewController {
 
 extension ImagesListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard indexPath.row == imagesDataSource.count - 1 else { return }
         
+        imagesFetchSignal.send()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

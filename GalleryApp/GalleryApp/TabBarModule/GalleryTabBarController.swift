@@ -17,7 +17,7 @@ final class GalleryTabBarController: UITabBarController {
     private func createImagesNavigationController() -> UINavigationController {
         let searchViewController = ImagesListAssembly.make()
         searchViewController.title = "Image Gallery"
-        searchViewController.tabBarItem = UITabBarItem(title: "Images", image: .init(systemName: "photo"), tag: 0)
+        searchViewController.tabBarItem = UITabBarItem(title: "Images", image: .init(systemName: SFSymbols.photo), tag: 0)
         
         return UINavigationController(rootViewController: searchViewController)
     }
