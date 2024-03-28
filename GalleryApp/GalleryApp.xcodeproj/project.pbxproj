@@ -20,6 +20,15 @@
 		61D573962BB56CD500D98AAE /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */; };
 		61D573982BB56CE300D98AAE /* FavoritesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */; };
 		61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */; };
+		61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5739D2BB56F3C00D98AAE /* APIService.swift */; };
+		61D573A02BB56F5F00D98AAE /* BaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */; };
+		61D573A22BB56F7F00D98AAE /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */; };
+		61D573A42BB56F9400D98AAE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A32BB56F9400D98AAE /* NetworkError.swift */; };
+		61D573A62BB56FB200D98AAE /* NetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */; };
+		61D573A82BB56FEB00D98AAE /* ImagesListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A72BB56FEB00D98AAE /* ImagesListEndpoint.swift */; };
+		61D573AA2BB5700800D98AAE /* ImagesListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573A92BB5700800D98AAE /* ImagesListNetworkService.swift */; };
+		61D573AE2BB5710300D98AAE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573AD2BB5710300D98AAE /* Image.swift */; };
+		61D573B12BB5758700D98AAE /* Set+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573B02BB5758700D98AAE /* Set+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 		61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListRouter.swift; sourceTree = "<group>"; };
 		61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListAssembly.swift; sourceTree = "<group>"; };
+		61D5739D2BB56F3C00D98AAE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEndpoint.swift; sourceTree = "<group>"; };
+		61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		61D573A32BB56F9400D98AAE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceFactory.swift; sourceTree = "<group>"; };
+		61D573A72BB56FEB00D98AAE /* ImagesListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListEndpoint.swift; sourceTree = "<group>"; };
+		61D573A92BB5700800D98AAE /* ImagesListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListNetworkService.swift; sourceTree = "<group>"; };
+		61D573AD2BB5710300D98AAE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		61D573B02BB5758700D98AAE /* Set+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				61D573832BB56B2300D98AAE /* App */,
+				61D573AF2BB5757600D98AAE /* Extensions */,
+				61D5739C2BB56EEA00D98AAE /* Networking */,
+				61D573AC2BB570E900D98AAE /* Model */,
 				61D573892BB56C0000D98AAE /* DetailedImageModule */,
 				61D573872BB56B9800D98AAE /* ImagesListModule */,
 				61D573882BB56BDB00D98AAE /* FavoritesListModule */,
@@ -134,6 +155,44 @@
 				61D5737A2BB5698F00D98AAE /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		61D5739C2BB56EEA00D98AAE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				61D573AB2BB5703B00D98AAE /* ImagesList */,
+				61D5739D2BB56F3C00D98AAE /* APIService.swift */,
+				61D5739F2BB56F5F00D98AAE /* BaseEndpoint.swift */,
+				61D573A12BB56F7F00D98AAE /* NetworkConstants.swift */,
+				61D573A32BB56F9400D98AAE /* NetworkError.swift */,
+				61D573A52BB56FB200D98AAE /* NetworkServiceFactory.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		61D573AB2BB5703B00D98AAE /* ImagesList */ = {
+			isa = PBXGroup;
+			children = (
+				61D573A72BB56FEB00D98AAE /* ImagesListEndpoint.swift */,
+				61D573A92BB5700800D98AAE /* ImagesListNetworkService.swift */,
+			);
+			path = ImagesList;
+			sourceTree = "<group>";
+		};
+		61D573AC2BB570E900D98AAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61D573AD2BB5710300D98AAE /* Image.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61D573AF2BB5757600D98AAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61D573B02BB5758700D98AAE /* Set+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,16 +265,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D573A22BB56F7F00D98AAE /* NetworkConstants.swift in Sources */,
 				61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */,
+				61D573AA2BB5700800D98AAE /* ImagesListNetworkService.swift in Sources */,
 				61D573862BB56B8700D98AAE /* GalleryTabBarController.swift in Sources */,
 				61D573962BB56CD500D98AAE /* FavoritesListViewModel.swift in Sources */,
+				61D573A82BB56FEB00D98AAE /* ImagesListEndpoint.swift in Sources */,
+				61D573A02BB56F5F00D98AAE /* BaseEndpoint.swift in Sources */,
 				61D5738C2BB56C3C00D98AAE /* ImagesListViewController.swift in Sources */,
 				61D573942BB56CC400D98AAE /* FavoritesListViewController.swift in Sources */,
 				61D5738E2BB56C4600D98AAE /* ImagesListViewModel.swift in Sources */,
 				61D573922BB56C5900D98AAE /* ImagesListAssembly.swift in Sources */,
+				61D573A62BB56FB200D98AAE /* NetworkServiceFactory.swift in Sources */,
+				61D573B12BB5758700D98AAE /* Set+Ext.swift in Sources */,
+				61D573A42BB56F9400D98AAE /* NetworkError.swift in Sources */,
+				61D573AE2BB5710300D98AAE /* Image.swift in Sources */,
 				61D573982BB56CE300D98AAE /* FavoritesListRouter.swift in Sources */,
 				61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */,
 				61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */,
+				61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */,
 				61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

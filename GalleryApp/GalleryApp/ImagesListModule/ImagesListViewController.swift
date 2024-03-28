@@ -8,10 +8,12 @@
 import UIKit
 
 final class ImagesListViewController: UIViewController {
+    
+    var viewModel: ImagesListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .cyan
+        view.backgroundColor = .systemBackground
     }
 }
