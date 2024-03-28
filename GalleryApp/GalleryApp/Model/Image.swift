@@ -7,17 +7,19 @@
 
 import Foundation
 
-struct Image: Decodable {
-    let id: Int
-    let title, description: String
-    let coverPhoto: CoverPhoto
+struct Image: Decodable, Hashable {
+    let id: String
+    let description: String?
+    let urls: Urls
+    let user: User
+    let likes: Int
     
-    struct CoverPhoto: Decodable {
-        let urls: Urls
-        
-        struct Urls: Decodable {
-            let regular: URL
-        }
+    struct Urls: Decodable, Hashable {
+        let thumb: URL
+    }
+    
+    struct User: Decodable, Hashable {
+        let username: String
     }
 }
 
