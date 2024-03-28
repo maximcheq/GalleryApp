@@ -9,19 +9,35 @@
 /* Begin PBXBuildFile section */
 		61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5736F2BB5698D00D98AAE /* AppDelegate.swift */; };
 		61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573712BB5698D00D98AAE /* SceneDelegate.swift */; };
-		61D573742BB5698D00D98AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573732BB5698D00D98AAE /* ViewController.swift */; };
 		61D573792BB5698F00D98AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61D573782BB5698F00D98AAE /* Assets.xcassets */; };
 		61D5737C2BB5698F00D98AAE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 61D5737B2BB5698F00D98AAE /* Base */; };
+		61D573862BB56B8700D98AAE /* GalleryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573852BB56B8700D98AAE /* GalleryTabBarController.swift */; };
+		61D5738C2BB56C3C00D98AAE /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5738B2BB56C3C00D98AAE /* ImagesListViewController.swift */; };
+		61D5738E2BB56C4600D98AAE /* ImagesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5738D2BB56C4600D98AAE /* ImagesListViewModel.swift */; };
+		61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5738F2BB56C5000D98AAE /* ImagesListRouter.swift */; };
+		61D573922BB56C5900D98AAE /* ImagesListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573912BB56C5900D98AAE /* ImagesListAssembly.swift */; };
+		61D573942BB56CC400D98AAE /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573932BB56CC400D98AAE /* FavoritesListViewController.swift */; };
+		61D573962BB56CD500D98AAE /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */; };
+		61D573982BB56CE300D98AAE /* FavoritesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */; };
+		61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61D5736C2BB5698D00D98AAE /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D5736F2BB5698D00D98AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61D573712BB5698D00D98AAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61D573732BB5698D00D98AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61D573782BB5698F00D98AAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61D5737B2BB5698F00D98AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61D5737D2BB5698F00D98AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61D573852BB56B8700D98AAE /* GalleryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTabBarController.swift; sourceTree = "<group>"; };
+		61D5738B2BB56C3C00D98AAE /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
+		61D5738D2BB56C4600D98AAE /* ImagesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewModel.swift; sourceTree = "<group>"; };
+		61D5738F2BB56C5000D98AAE /* ImagesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListRouter.swift; sourceTree = "<group>"; };
+		61D573912BB56C5900D98AAE /* ImagesListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListAssembly.swift; sourceTree = "<group>"; };
+		61D573932BB56CC400D98AAE /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListRouter.swift; sourceTree = "<group>"; };
+		61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,70 @@
 		61D5736E2BB5698D00D98AAE /* GalleryApp */ = {
 			isa = PBXGroup;
 			children = (
-				61D5736F2BB5698D00D98AAE /* AppDelegate.swift */,
-				61D573712BB5698D00D98AAE /* SceneDelegate.swift */,
-				61D573732BB5698D00D98AAE /* ViewController.swift */,
-				61D573782BB5698F00D98AAE /* Assets.xcassets */,
-				61D5737A2BB5698F00D98AAE /* LaunchScreen.storyboard */,
+				61D573832BB56B2300D98AAE /* App */,
+				61D573892BB56C0000D98AAE /* DetailedImageModule */,
+				61D573872BB56B9800D98AAE /* ImagesListModule */,
+				61D573882BB56BDB00D98AAE /* FavoritesListModule */,
+				61D573842BB56B6600D98AAE /* TabBarModule */,
+				61D5738A2BB56C1600D98AAE /* Resources */,
 				61D5737D2BB5698F00D98AAE /* Info.plist */,
 			);
 			path = GalleryApp;
+			sourceTree = "<group>";
+		};
+		61D573832BB56B2300D98AAE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				61D5736F2BB5698D00D98AAE /* AppDelegate.swift */,
+				61D573712BB5698D00D98AAE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		61D573842BB56B6600D98AAE /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				61D573852BB56B8700D98AAE /* GalleryTabBarController.swift */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		61D573872BB56B9800D98AAE /* ImagesListModule */ = {
+			isa = PBXGroup;
+			children = (
+				61D573912BB56C5900D98AAE /* ImagesListAssembly.swift */,
+				61D5738B2BB56C3C00D98AAE /* ImagesListViewController.swift */,
+				61D5738D2BB56C4600D98AAE /* ImagesListViewModel.swift */,
+				61D5738F2BB56C5000D98AAE /* ImagesListRouter.swift */,
+			);
+			path = ImagesListModule;
+			sourceTree = "<group>";
+		};
+		61D573882BB56BDB00D98AAE /* FavoritesListModule */ = {
+			isa = PBXGroup;
+			children = (
+				61D573932BB56CC400D98AAE /* FavoritesListViewController.swift */,
+				61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */,
+				61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */,
+				61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */,
+			);
+			path = FavoritesListModule;
+			sourceTree = "<group>";
+		};
+		61D573892BB56C0000D98AAE /* DetailedImageModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailedImageModule;
+			sourceTree = "<group>";
+		};
+		61D5738A2BB56C1600D98AAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				61D573782BB5698F00D98AAE /* Assets.xcassets */,
+				61D5737A2BB5698F00D98AAE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D573742BB5698D00D98AAE /* ViewController.swift in Sources */,
+				61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */,
+				61D573862BB56B8700D98AAE /* GalleryTabBarController.swift in Sources */,
+				61D573962BB56CD500D98AAE /* FavoritesListViewModel.swift in Sources */,
+				61D5738C2BB56C3C00D98AAE /* ImagesListViewController.swift in Sources */,
+				61D573942BB56CC400D98AAE /* FavoritesListViewController.swift in Sources */,
+				61D5738E2BB56C4600D98AAE /* ImagesListViewModel.swift in Sources */,
+				61D573922BB56C5900D98AAE /* ImagesListAssembly.swift in Sources */,
+				61D573982BB56CE300D98AAE /* FavoritesListRouter.swift in Sources */,
+				61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */,
 				61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */,
 				61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */,
 			);
