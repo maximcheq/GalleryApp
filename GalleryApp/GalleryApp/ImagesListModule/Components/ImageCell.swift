@@ -20,11 +20,11 @@ final class ImageCell: UICollectionViewCell {
     private lazy var favoriteButton: FavouriteButton = {
         let button = FavouriteButton()
         button.isFavourite = false
-        
         button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
-        
         return button
     }()
+    
+    var action: ((Bool) -> ())?
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let buttonPoint = convert(point, to: favoriteButton)
@@ -43,13 +43,15 @@ final class ImageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(image: Image) {
-        let url = image.urls.thumb
+    func set(image: Image, favorites: [Image]) {
+        let url = URL(string: image.urls.thumb)
         avatarImageView.kf.setImage(with: url)
+        favoriteButton.isFavourite = favorites.map { $0.id }.contains(image.id)
     }
     
     @objc private func favoriteButtonTapped() {
         favoriteButton.isFavourite.toggle()
+        action?(favoriteButton.isFavourite)
     }
     
     private func configure() {

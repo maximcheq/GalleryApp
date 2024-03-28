@@ -23,16 +23,22 @@ final class ImagesListViewController: UIViewController {
                                                        collectionViewLayout: createTwoColumnFlowLayout())
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Image> = .init(collectionView: collectionView) { collectionView, indexPath, image in
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseID, for: indexPath) as? ImageCell else { return UICollectionViewCell() }
-
-        cell.set(image: image)
+        cell.action = { [weak self] isFavorite in
+            self?.didTapFavoriteSignal.send((isFavorite, image))
+        }
+        
+        cell.set(image: image, favorites: self.favoritesDataSource)
         return cell
     }
     
     private let loadingIndicator = LoadingIndicatorView()
     
     private var imagesDataSource: [Image] = []
+    private var favoritesDataSource: [Image] = []
     
     private let imagesFetchSignal = PassthroughSubject<Void, Never>()
+    private let favoritesFetchSignal = PassthroughSubject<Void, Never>()
+    private let didTapFavoriteSignal = PassthroughSubject<(Bool, Image), Never>()
     private var cancellables = Set<AnyCancellable>()
     
     var viewModel: ImagesListViewModel!
@@ -45,11 +51,14 @@ final class ImagesListViewController: UIViewController {
         configureLoadingIndicator()
         
         imagesFetchSignal.send()
+        favoritesFetchSignal.send()
     }
     
     private func bindViewModel() {
         let input = ImagesListViewModel.Input(
-            imagesFetchSignal: imagesFetchSignal
+            imagesFetchSignal: imagesFetchSignal, 
+            favoritesFetchSignal: favoritesFetchSignal,
+            didTapFavoriteSignal: didTapFavoriteSignal
         )
         
         viewModel.transform(input, outputHandler: handleOutput)
@@ -57,18 +66,28 @@ final class ImagesListViewController: UIViewController {
     
     private func handleOutput(_ output: ImagesListViewModel.Output) {
         cancellables.addElements(
-            updateDataSource(with: output.imagesDataSource),
-            updateLoadingIndicator(with: output.loadingIndicatorDataSource)
+            updateImagesDataSource(with: output.imagesDataSource),
+            updateLoadingIndicator(with: output.loadingIndicatorDataSource),
+            updateFavoritesDataSource(with: output.favoritesDataSource)
         )
     }
     
-    private func updateDataSource(with signal: PassthroughSubject<[Image], Never>) -> AnyCancellable {
+    private func updateImagesDataSource(with signal: PassthroughSubject<[Image], Never>) -> AnyCancellable {
         signal
             .receive(on: DispatchQueue.main)
             .sink { [weak self] images in
                 guard let self else { return }
                 imagesDataSource.append(contentsOf: images)
                 updateData()
+            }
+    }
+    
+    private func updateFavoritesDataSource(with signal: PassthroughSubject<[Image], Never>) -> AnyCancellable {
+        signal
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] favorites in
+                guard let self else { return }
+                favoritesDataSource = favorites
             }
     }
     

@@ -11,10 +11,13 @@ import Combine
 final class ImagesListViewModel {
     struct Input {
         let imagesFetchSignal: PassthroughSubject<Void, Never>
+        let favoritesFetchSignal: PassthroughSubject<Void, Never>
+        let didTapFavoriteSignal: PassthroughSubject<(Bool, Image), Never>
     }
     
     struct Output {
         let imagesDataSource: PassthroughSubject<[Image], Never>
+        let favoritesDataSource: PassthroughSubject<[Image], Never>
         let loadingIndicatorDataSource: PassthroughSubject<Bool, Never>
     }
     
@@ -23,21 +26,28 @@ final class ImagesListViewModel {
     
     private let loadingIndicatorDataSource = PassthroughSubject<Bool, Never>()
     private let imagesDataSource = PassthroughSubject<[Image], Never>()
+    private let favoritesDataSource = PassthroughSubject<[Image], Never>()
     private var cancellables = Set<AnyCancellable>()
     
     private let networkService: ImagesListNetworkServiceProtocol
+    private let imageRepository: ImageRepository
     
-    init(networkService: ImagesListNetworkServiceProtocol) {
+    init(networkService: ImagesListNetworkServiceProtocol,
+         imageRepository: ImageRepository) {
         self.networkService = networkService
+        self.imageRepository = imageRepository
     }
     
     func transform(_ input: Input, outputHandler: @escaping (Output) -> Void) {
         cancellables.addElements(
-            imagesFetchObserving(with: input.imagesFetchSignal)
+            imagesFetchObserving(with: input.imagesFetchSignal),
+            favoritesFetchObserving(with: input.favoritesFetchSignal),
+            didTapFavoriteObserving(with: input.didTapFavoriteSignal)
         )
         
         let output = Output(
             imagesDataSource: imagesDataSource, 
+            favoritesDataSource: favoritesDataSource, 
             loadingIndicatorDataSource: loadingIndicatorDataSource
         )
         
@@ -64,6 +74,27 @@ final class ImagesListViewModel {
                         imagesDataSource.send(images)
                     })
                     .store(in: &cancellables)
+            }
+    }
+    
+    private func didTapFavoriteObserving(with signal: PassthroughSubject<(Bool, Image), Never>) -> AnyCancellable {
+        signal
+            .sink { [weak self] isFavorite, image in
+                guard let self else { return }
+                if !isFavorite {
+                    imageRepository.removeImage(image.id)
+                } else {
+                    imageRepository.addImage(image)
+                }
+            }
+    }
+    
+    private func favoritesFetchObserving(with signal: PassthroughSubject<Void, Never>) -> AnyCancellable {
+        signal
+            .sink { [weak self] _ in
+                guard let self else { return }
+                let favorites = imageRepository.getImagesList()
+                favoritesDataSource.send(favorites)
             }
     }
 }

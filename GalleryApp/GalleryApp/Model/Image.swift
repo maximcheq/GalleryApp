@@ -15,11 +15,21 @@ struct Image: Decodable, Hashable {
     let likes: Int
     
     struct Urls: Decodable, Hashable {
-        let thumb: URL
+        let thumb: String
     }
     
     struct User: Decodable, Hashable {
         let username: String
+    }
+}
+
+extension Image {
+    init(object: ImageObject) {
+        id = object.id
+        description = object.descriptionText
+        urls = Urls(thumb: object.thumbURL)
+        user = User(username: object.username)
+        likes = object.likes
     }
 }
 
