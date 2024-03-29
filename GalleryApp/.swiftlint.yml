@@ -48,12 +48,7 @@ only_rules: # Only the rules specified in this list will be enabled. Cannot be s
   - file_length
   # Find all the available rules by running:
   # swiftlint rules
-excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - vendor
-  - Pods
-  - SuperApp/*Tests
-  - SuperApp/**/*Tests
-included: # Включаем только файлы с расширением .swift
+included:
   - "**/*.swift"
 
 # configurable rules can be customized from this configuration file

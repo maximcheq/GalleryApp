@@ -11,9 +11,10 @@ final class FavoritesListAssembly {
     static func make() -> UIViewController {
         let viewController = FavoritesListViewController()
         //let router = SearchRouter(rootView: viewController)
-        //let viewModel = SearchViewModel(router: router)
+        let imageRepository = ImageRepositoryImpl()
+        let viewModel = FavoritesListViewModel(imageRepository: imageRepository)
         
-        //viewController.viewModel = viewModel
+        viewController.viewModel = viewModel
         
         return viewController
     }

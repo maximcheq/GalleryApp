@@ -43,6 +43,7 @@
 		61D573D32BB5AC9900D98AAE /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573D22BB5AC9900D98AAE /* ImageObject.swift */; };
 		61D573D62BB5AD5500D98AAE /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573D52BB5AD5500D98AAE /* PersistanceService.swift */; };
 		61D573D82BB5B07C00D98AAE /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573D72BB5B07C00D98AAE /* ImageRepository.swift */; };
+		61D573F42BB6C61000D98AAE /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573F32BB6C61000D98AAE /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		61D573D22BB5AC9900D98AAE /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 		61D573D52BB5AD5500D98AAE /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		61D573D72BB5B07C00D98AAE /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		61D573F32BB6C61000D98AAE /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,10 +167,11 @@
 		61D573882BB56BDB00D98AAE /* FavoritesListModule */ = {
 			isa = PBXGroup;
 			children = (
+				61D573F22BB6C60000D98AAE /* Components */,
+				61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */,
 				61D573932BB56CC400D98AAE /* FavoritesListViewController.swift */,
 				61D573952BB56CD500D98AAE /* FavoritesListViewModel.swift */,
 				61D573972BB56CE300D98AAE /* FavoritesListRouter.swift */,
-				61D573992BB56CEE00D98AAE /* FavoritesListAssembly.swift */,
 			);
 			path = FavoritesListModule;
 			sourceTree = "<group>";
@@ -262,6 +265,14 @@
 				61D573D72BB5B07C00D98AAE /* ImageRepository.swift */,
 			);
 			path = Persistance;
+			sourceTree = "<group>";
+		};
+		61D573F22BB6C60000D98AAE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				61D573F32BB6C61000D98AAE /* FavoriteCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +406,7 @@
 				61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */,
 				61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */,
 				61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */,
+				61D573F42BB6C61000D98AAE /* FavoriteCell.swift in Sources */,
 				61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */,
 				61D573CA2BB5956F00D98AAE /* FavoriteButton.swift in Sources */,
 			);

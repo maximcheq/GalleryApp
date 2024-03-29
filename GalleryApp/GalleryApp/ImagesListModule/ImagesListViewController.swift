@@ -61,6 +61,11 @@ final class ImagesListViewController: UIViewController {
         favoritesFetchSignal.send()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoritesFetchSignal.send()
+    }
+    
     private func bindViewModel() {
         let input = ImagesListViewModel.Input(
             imagesFetchSignal: imagesFetchSignal, 
@@ -95,6 +100,7 @@ final class ImagesListViewController: UIViewController {
             .sink { [weak self] favorites in
                 guard let self else { return }
                 favoritesDataSource = favorites
+                collectionView.reloadData()
             }
     }
     
