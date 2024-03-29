@@ -28,9 +28,9 @@ final class StorageService {
         }
     }
     
-    func delete(id: String) throws {
+    func delete<T: Object>(id: String, type: T.Type) throws {
         guard let storage else { return }
-        if let objectToDelete = storage.object(ofType: ImageObject.self, forPrimaryKey: id) {
+        if let objectToDelete = storage.object(ofType: T.self, forPrimaryKey: id) {
             storage.writeAsync {
                 storage.delete(objectToDelete)
             }

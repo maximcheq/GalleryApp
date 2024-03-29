@@ -21,8 +21,12 @@ final class ImagesListViewController: UIViewController {
     
     private lazy var collectionView = UICollectionView(frame: view.bounds,
                                                        collectionViewLayout: createTwoColumnFlowLayout())
+    // swiftlint:disable line_length
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Image> = .init(collectionView: collectionView) { collectionView, indexPath, image in
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseID, for: indexPath) as? ImageCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseID, for: indexPath) as? ImageCell else {
+            return UICollectionViewCell()
+        }
+        
         cell.action = { [weak self] isFavorite in
             self?.didTapFavoriteSignal.send((isFavorite, image))
         }
@@ -30,6 +34,7 @@ final class ImagesListViewController: UIViewController {
         cell.set(image: image, favorites: self.favoritesDataSource)
         return cell
     }
+    // swiftlint:enable line_length
     
     private let loadingIndicator = LoadingIndicatorView()
     
@@ -41,7 +46,9 @@ final class ImagesListViewController: UIViewController {
     private let didTapFavoriteSignal = PassthroughSubject<(Bool, Image), Never>()
     private var cancellables = Set<AnyCancellable>()
     
+    // swiftlint:disable implicitly_unwrapped_optional
     var viewModel: ImagesListViewModel!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     override func viewDidLoad() {
         super.viewDidLoad()

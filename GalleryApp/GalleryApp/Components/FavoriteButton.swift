@@ -7,9 +7,9 @@
 
 import UIKit
 
-public final class FavouriteButton: UIButton {
+public final class FavoriteButton: UIButton {
     
-    public var isFavourite = false {
+    public var isFavorite = false {
         didSet {
             updateButtonAppearance()
         }
@@ -30,12 +30,12 @@ public final class FavouriteButton: UIButton {
     }
 
     private func updateButtonAppearance() {
-        if isFavourite {
+        if isFavorite {
             backgroundColor = .systemPink
-            setImage(.isFavouriteButton, for: .normal)
+            setImage(.isFavoriteButton, for: .normal)
         } else {
             backgroundColor = .white
-            setImage(.isNotFavouriteButton.withRenderingMode(.alwaysTemplate), for: .normal)
+            setImage(.isNotFavoriteButton.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
 }

@@ -26,7 +26,7 @@ final class ImagesListNetworkService: ImagesListNetworkServiceProtocol {
         let publisher: ImagesList = apiService.request(endpoint)
         return publisher
             .catch { error -> ImagesList in
-                return Fail(error: error).eraseToAnyPublisher()
+                Fail(error: error).eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }

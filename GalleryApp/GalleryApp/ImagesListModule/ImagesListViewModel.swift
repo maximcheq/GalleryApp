@@ -81,7 +81,7 @@ final class ImagesListViewModel {
         signal
             .sink { [weak self] isFavorite, image in
                 guard let self else { return }
-                if !isFavorite {
+                if isFavorite {
                     imageRepository.removeImage(image.id)
                 } else {
                     imageRepository.addImage(image)

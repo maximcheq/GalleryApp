@@ -27,7 +27,7 @@ final class ImageRepositoryImpl: ImageRepository {
     }
     
     func removeImage(_ id: String) {
-        try? storage.delete(id: id)
+        try? storage.delete(id: id, type: ImageObject.self)
     }
     
     func addImage(_ data: Image) {

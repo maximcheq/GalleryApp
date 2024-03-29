@@ -32,4 +32,3 @@ extension Image {
         likes = object.likes
     }
 }
-
