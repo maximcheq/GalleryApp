@@ -74,10 +74,9 @@ final class ImagesListViewModel {
                     .receive(on: DispatchQueue.main)
                     .sink(receiveCompletion: { [weak self] completion in
                         guard let self else { return }
-                        if case let .failure(error) = completion {
+                        if case .failure = completion {
                             router.presentErrorAlert(with: Constants.errorAlertTitle,
-                                                     message: Constants.errorAlertMessage) { [weak self] in
-                                guard let self else { return }
+                                                     message: Constants.errorAlertMessage) {
                                 signal.send()
                             }
                         }
