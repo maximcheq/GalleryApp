@@ -9,6 +9,12 @@ import Foundation
 import Combine
 
 final class ImagesListViewModel {
+    
+    private enum Constants {
+        static let errorAlertTitle = "Ooops"
+        static let errorAlertMessage = "Something went wrong with your request"
+    }
+    
     struct Input {
         let imagesFetchSignal: PassthroughSubject<Void, Never>
         let favoritesFetchSignal: PassthroughSubject<Void, Never>
@@ -69,7 +75,11 @@ final class ImagesListViewModel {
                     .sink(receiveCompletion: { [weak self] completion in
                         guard let self else { return }
                         if case let .failure(error) = completion {
-                            debugPrint(error)
+                            router.presentErrorAlert(with: Constants.errorAlertTitle,
+                                                     message: Constants.errorAlertMessage) { [weak self] in
+                                guard let self else { return }
+                                signal.send()
+                            }
                         }
                         loadingIndicatorDataSource.send(false)
                     }, receiveValue: { [weak self] images in
