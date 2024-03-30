@@ -15,6 +15,7 @@ final class FavoritesListViewController: UIViewController {
     
     private var favoritesDataSource: [Image] = []
     
+    private let didSelectFavorite = PassthroughSubject<([Image], Int), Never>()
     private let deleteFavoriteSignal = PassthroughSubject<Image, Never>()
     private let favoritesFetchSignal = PassthroughSubject<Void, Never>()
     private var cancellables = Set<AnyCancellable>()
@@ -38,7 +39,8 @@ final class FavoritesListViewController: UIViewController {
     private func bindViewModel() {
         let input = FavoritesListViewModel.Input(
             favoritesFetchSignal: favoritesFetchSignal, 
-            deleteFavoriteSignal: deleteFavoriteSignal
+            deleteFavoriteSignal: deleteFavoriteSignal, 
+            didSelectFavorite: didSelectFavorite
         )
         
         viewModel.transform(input, outputHandler: handleOutput)
@@ -100,6 +102,10 @@ extension FavoritesListViewController: UITableViewDataSource {
 }
 
 extension FavoritesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectFavorite.send((favoritesDataSource, indexPath.row))
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         

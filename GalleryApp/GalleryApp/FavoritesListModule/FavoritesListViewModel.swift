@@ -12,6 +12,7 @@ final class FavoritesListViewModel {
     struct Input {
         let favoritesFetchSignal: PassthroughSubject<Void, Never>
         let deleteFavoriteSignal: PassthroughSubject<Image, Never>
+        let didSelectFavorite: PassthroughSubject<([Image], Int), Never>
     }
     
     struct Output {
@@ -22,15 +23,19 @@ final class FavoritesListViewModel {
     private var cancellables = Set<AnyCancellable>()
     
     private let imageRepository: ImageRepository
+    private let router: FavoritesListRouterProtocol
     
-    init(imageRepository: ImageRepository) {
+    init(imageRepository: ImageRepository,
+         router: FavoritesListRouterProtocol) {
         self.imageRepository = imageRepository
+        self.router = router
     }
     
     func transform(_ input: Input, outputHandler: @escaping (Output) -> Void) {
         cancellables.addElements(
             favoritesFetchObserving(with: input.favoritesFetchSignal),
-            deleteFavoriteObserving(with: input.deleteFavoriteSignal)
+            deleteFavoriteObserving(with: input.deleteFavoriteSignal),
+            didSelectFavoriteObserving(with: input.didSelectFavorite)
         )
         
         let output = Output(
@@ -56,6 +61,15 @@ final class FavoritesListViewModel {
             .sink { [weak self] image in
                 guard let self else { return }
                 imageRepository.removeImage(image.id)
+            }
+    }
+    
+    private func didSelectFavoriteObserving(with signal: PassthroughSubject<([Image], Int), Never>) -> AnyCancellable {
+        signal
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] images, index in
+                guard let self else { return }
+                router.openDetailedImageScreen(with: images, index: index)
             }
     }
 }
