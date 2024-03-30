@@ -39,6 +39,7 @@ final class FavoriteEmptyStateView: UIView {
         imageView.image = UIImage(systemName: SFSymbols.star)
         imageView.tintColor = .secondaryLabel
         imageView.contentMode = .scaleAspectFill
+        
         titleLabel.text = Constants.titleText
         descriptionLabel.text = Constants.descriptionText
         

@@ -18,6 +18,9 @@ final class DetailedImageViewController: UIViewController {
     
     private enum Constants {
         static let noDescriptionMock = "The author didn't add any description."
+        static let padding: CGFloat = 20
+        static let imageViewHeight: CGFloat = 200
+        static let likesViewWidth: CGFloat = 70
     }
     
     private let avatarImageView = GalleryImageView(frame: .zero)
@@ -80,22 +83,22 @@ final class DetailedImageViewController: UIViewController {
         
         avatarImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(200)
+            make.leading.trailing.equalToSuperview().inset(Constants.padding)
+            make.height.equalTo(Constants.imageViewHeight)
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(avatarImageView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(Constants.padding)
+            make.leading.trailing.equalToSuperview().inset(Constants.padding)
         }
         
         likesView.snp.makeConstraints { make in
-            make.width.equalTo(70)
+            make.width.equalTo(Constants.likesViewWidth)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(stackView.snp.bottom).offset(Constants.padding)
+            make.leading.trailing.equalToSuperview().inset(Constants.padding)
         }
     }
     

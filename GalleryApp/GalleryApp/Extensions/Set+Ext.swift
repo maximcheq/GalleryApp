@@ -8,7 +8,7 @@
 import Foundation
 
 extension Set {
-    public mutating func addElements(_ elements: Element...) {
+    mutating func addElements(_ elements: Element...) {
         elements.forEach { insert($0) }
     }
 }
