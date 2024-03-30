@@ -50,6 +50,7 @@
 		61D573FC2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */; };
 		61D573FE2BB6E7CD00D98AAE /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573FD2BB6E7CD00D98AAE /* LikesView.swift */; };
 		61D574022BB6FE1E00D98AAE /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D574012BB6FE1E00D98AAE /* UIStackView+Ext.swift */; };
+		61D574042BB81C0C00D98AAE /* FavoriteEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D574032BB81C0C00D98AAE /* FavoriteEmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDescriptionLabel.swift; sourceTree = "<group>"; };
 		61D573FD2BB6E7CD00D98AAE /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
 		61D574012BB6FE1E00D98AAE /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
+		61D574032BB81C0C00D98AAE /* FavoriteEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */,
 				61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */,
 				61D573C72BB58CCD00D98AAE /* LoadingIndicatorView.swift */,
+				61D574032BB81C0C00D98AAE /* FavoriteEmptyStateView.swift */,
 				61D573C92BB5956F00D98AAE /* FavoriteButton.swift */,
 				61D573FD2BB6E7CD00D98AAE /* LikesView.swift */,
 			);
@@ -401,6 +404,7 @@
 				61D573D82BB5B07C00D98AAE /* ImageRepository.swift in Sources */,
 				61D573FE2BB6E7CD00D98AAE /* LikesView.swift in Sources */,
 				61D573F82BB6DF4300D98AAE /* DetailedImageViewModel.swift in Sources */,
+				61D574042BB81C0C00D98AAE /* FavoriteEmptyStateView.swift in Sources */,
 				61D573D32BB5AC9900D98AAE /* ImageObject.swift in Sources */,
 				61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */,
 				61D573AA2BB5700800D98AAE /* ImagesListNetworkService.swift in Sources */,

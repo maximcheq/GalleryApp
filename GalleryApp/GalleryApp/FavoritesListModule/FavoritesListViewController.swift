@@ -11,6 +11,7 @@ import Combine
 final class FavoritesListViewController: UIViewController {
     
     private let tableView = UITableView()
+    private let emptyStateView = FavoriteEmptyStateView()
     
     private var favoritesDataSource: [Image] = []
     
@@ -54,7 +55,7 @@ final class FavoritesListViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] favorites in
                 guard let self else { return }
-
+                setupEmptyStateView(with: favorites)
                 favoritesDataSource = favorites
                 tableView.reloadData()
             }
@@ -72,6 +73,14 @@ final class FavoritesListViewController: UIViewController {
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
         tableView.frame = view.bounds
         tableView.rowHeight = 80
+    }
+    
+    private func setupEmptyStateView(with favorites: [Image]) {
+        if favorites.isEmpty {
+            tableView.backgroundView = emptyStateView
+        } else {
+            tableView.backgroundView = nil
+        }
     }
 }
 
@@ -98,6 +107,8 @@ extension FavoritesListViewController: UITableViewDelegate {
         
         favoritesDataSource.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
+        
+        setupEmptyStateView(with: favoritesDataSource)
         
         deleteFavoriteSignal.send(favorite)
     }

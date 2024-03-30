@@ -15,4 +15,5 @@ enum NetworkConstants {
 
 enum SFSymbols {
     static let photo = "photo"
+    static let star = "star"
 }
