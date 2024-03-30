@@ -13,6 +13,7 @@ final class ImagesListViewModel {
         let imagesFetchSignal: PassthroughSubject<Void, Never>
         let favoritesFetchSignal: PassthroughSubject<Void, Never>
         let didTapFavoriteSignal: PassthroughSubject<(Bool, Image), Never>
+        let didSelectImage: PassthroughSubject<([Image], Int), Never>
     }
     
     struct Output {
@@ -31,18 +32,22 @@ final class ImagesListViewModel {
     
     private let networkService: ImagesListNetworkServiceProtocol
     private let imageRepository: ImageRepository
+    private let router: ImagesListRouterProtocol
     
     init(networkService: ImagesListNetworkServiceProtocol,
-         imageRepository: ImageRepository) {
+         imageRepository: ImageRepository,
+         router: ImagesListRouterProtocol) {
         self.networkService = networkService
         self.imageRepository = imageRepository
+        self.router = router
     }
     
     func transform(_ input: Input, outputHandler: @escaping (Output) -> Void) {
         cancellables.addElements(
             imagesFetchObserving(with: input.imagesFetchSignal),
             favoritesFetchObserving(with: input.favoritesFetchSignal),
-            didTapFavoriteObserving(with: input.didTapFavoriteSignal)
+            didTapFavoriteObserving(with: input.didTapFavoriteSignal),
+            didSelectImageObserving(with: input.didSelectImage)
         )
         
         let output = Output(
@@ -95,6 +100,15 @@ final class ImagesListViewModel {
                 guard let self else { return }
                 let favorites = imageRepository.getImagesList()
                 favoritesDataSource.send(favorites)
+            }
+    }
+    
+    private func didSelectImageObserving(with signal: PassthroughSubject<([Image], Int), Never>) -> AnyCancellable {
+        signal
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] images, index in
+                guard let self else { return }
+                router.openDetailedImageScreen(with: images, index: index)
             }
     }
 }

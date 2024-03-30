@@ -12,6 +12,7 @@ final class ImageObject: Object {
     @Persisted(primaryKey: true) var id: String
     @Persisted var descriptionText: String?
     @Persisted var thumbURL: String
+    @Persisted var regularURL: String
     @Persisted var username: String
     @Persisted var likes: Int
     
@@ -37,6 +38,7 @@ extension ImageObject {
         id = dto.id
         descriptionText = dto.description
         thumbURL = dto.urls.thumb
+        regularURL = dto.urls.regular
         username = dto.user.username
         likes = dto.likes
     }

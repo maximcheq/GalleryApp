@@ -44,6 +44,12 @@
 		61D573D62BB5AD5500D98AAE /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573D52BB5AD5500D98AAE /* PersistanceService.swift */; };
 		61D573D82BB5B07C00D98AAE /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573D72BB5B07C00D98AAE /* ImageRepository.swift */; };
 		61D573F42BB6C61000D98AAE /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573F32BB6C61000D98AAE /* FavoriteCell.swift */; };
+		61D573F62BB6DF2100D98AAE /* DetailedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573F52BB6DF2100D98AAE /* DetailedImageViewController.swift */; };
+		61D573F82BB6DF4300D98AAE /* DetailedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573F72BB6DF4300D98AAE /* DetailedImageViewModel.swift */; };
+		61D573FA2BB6DF5200D98AAE /* DetailedImageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573F92BB6DF5200D98AAE /* DetailedImageAssembly.swift */; };
+		61D573FC2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */; };
+		61D573FE2BB6E7CD00D98AAE /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D573FD2BB6E7CD00D98AAE /* LikesView.swift */; };
+		61D574022BB6FE1E00D98AAE /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D574012BB6FE1E00D98AAE /* UIStackView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +87,12 @@
 		61D573D52BB5AD5500D98AAE /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		61D573D72BB5B07C00D98AAE /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		61D573F32BB6C61000D98AAE /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		61D573F52BB6DF2100D98AAE /* DetailedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedImageViewController.swift; sourceTree = "<group>"; };
+		61D573F72BB6DF4300D98AAE /* DetailedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedImageViewModel.swift; sourceTree = "<group>"; };
+		61D573F92BB6DF5200D98AAE /* DetailedImageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedImageAssembly.swift; sourceTree = "<group>"; };
+		61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDescriptionLabel.swift; sourceTree = "<group>"; };
+		61D573FD2BB6E7CD00D98AAE /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
+		61D574012BB6FE1E00D98AAE /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +191,9 @@
 		61D573892BB56C0000D98AAE /* DetailedImageModule */ = {
 			isa = PBXGroup;
 			children = (
+				61D573F92BB6DF5200D98AAE /* DetailedImageAssembly.swift */,
+				61D573F52BB6DF2100D98AAE /* DetailedImageViewController.swift */,
+				61D573F72BB6DF4300D98AAE /* DetailedImageViewModel.swift */,
 			);
 			path = DetailedImageModule;
 			sourceTree = "<group>";
@@ -227,6 +242,7 @@
 			children = (
 				61D573B02BB5758700D98AAE /* Set+Ext.swift */,
 				61D573BA2BB5805C00D98AAE /* UIView+Ext.swift */,
+				61D574012BB6FE1E00D98AAE /* UIStackView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,8 +260,10 @@
 			children = (
 				61D573B62BB57FC400D98AAE /* GalleryImageView.swift */,
 				61D573B82BB57FF000D98AAE /* GalleryTitleLabel.swift */,
+				61D573FB2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift */,
 				61D573C72BB58CCD00D98AAE /* LoadingIndicatorView.swift */,
 				61D573C92BB5956F00D98AAE /* FavoriteButton.swift */,
+				61D573FD2BB6E7CD00D98AAE /* LikesView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -381,6 +399,8 @@
 			files = (
 				61D573C62BB5886100D98AAE /* Constants.swift in Sources */,
 				61D573D82BB5B07C00D98AAE /* ImageRepository.swift in Sources */,
+				61D573FE2BB6E7CD00D98AAE /* LikesView.swift in Sources */,
+				61D573F82BB6DF4300D98AAE /* DetailedImageViewModel.swift in Sources */,
 				61D573D32BB5AC9900D98AAE /* ImageObject.swift in Sources */,
 				61D573902BB56C5000D98AAE /* ImagesListRouter.swift in Sources */,
 				61D573AA2BB5700800D98AAE /* ImagesListNetworkService.swift in Sources */,
@@ -391,6 +411,8 @@
 				61D573C82BB58CCD00D98AAE /* LoadingIndicatorView.swift in Sources */,
 				61D573B42BB57DD900D98AAE /* ImageCell.swift in Sources */,
 				61D573A82BB56FEB00D98AAE /* ImagesListEndpoint.swift in Sources */,
+				61D573F62BB6DF2100D98AAE /* DetailedImageViewController.swift in Sources */,
+				61D574022BB6FE1E00D98AAE /* UIStackView+Ext.swift in Sources */,
 				61D573BB2BB5805C00D98AAE /* UIView+Ext.swift in Sources */,
 				61D573A02BB56F5F00D98AAE /* BaseEndpoint.swift in Sources */,
 				61D5738C2BB56C3C00D98AAE /* ImagesListViewController.swift in Sources */,
@@ -404,10 +426,12 @@
 				61D573AE2BB5710300D98AAE /* Image.swift in Sources */,
 				61D573982BB56CE300D98AAE /* FavoritesListRouter.swift in Sources */,
 				61D5739A2BB56CEE00D98AAE /* FavoritesListAssembly.swift in Sources */,
+				61D573FA2BB6DF5200D98AAE /* DetailedImageAssembly.swift in Sources */,
 				61D573702BB5698D00D98AAE /* AppDelegate.swift in Sources */,
 				61D5739E2BB56F3C00D98AAE /* APIService.swift in Sources */,
 				61D573F42BB6C61000D98AAE /* FavoriteCell.swift in Sources */,
 				61D573722BB5698D00D98AAE /* SceneDelegate.swift in Sources */,
+				61D573FC2BB6E64E00D98AAE /* GalleryDescriptionLabel.swift in Sources */,
 				61D573CA2BB5956F00D98AAE /* FavoriteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

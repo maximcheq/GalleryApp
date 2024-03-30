@@ -16,6 +16,7 @@ struct Image: Decodable, Hashable {
     
     struct Urls: Decodable, Hashable {
         let thumb: String
+        let regular: String
     }
     
     struct User: Decodable, Hashable {
@@ -27,7 +28,7 @@ extension Image {
     init(object: ImageObject) {
         id = object.id
         description = object.descriptionText
-        urls = Urls(thumb: object.thumbURL)
+        urls = Urls(thumb: object.thumbURL, regular: object.regularURL)
         user = User(username: object.username)
         likes = object.likes
     }

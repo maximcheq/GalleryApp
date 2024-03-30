@@ -12,6 +12,8 @@ final class GalleryTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllers()
+        configureTabBarAppearance()
+        configureNavigationBarAppearance()
     }
     
     private func createImagesNavigationController() -> UINavigationController {
@@ -32,5 +34,13 @@ final class GalleryTabBarController: UITabBarController {
     
     private func configureViewControllers() {
         viewControllers = [createImagesNavigationController(), createFavoritesListNavigationController()]
+    }
+    
+    private func configureTabBarAppearance() {
+        UITabBar.appearance().tintColor = .galleryPurple
+    }
+    
+    private func configureNavigationBarAppearance() {
+        UINavigationBar.appearance().tintColor = .galleryPurple
     }
 }

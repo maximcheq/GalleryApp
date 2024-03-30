@@ -41,6 +41,7 @@ final class ImagesListViewController: UIViewController {
     private var imagesDataSource: [Image] = []
     private var favoritesDataSource: [Image] = []
     
+    private let didSelectImage = PassthroughSubject<([Image], Int), Never>()
     private let imagesFetchSignal = PassthroughSubject<Void, Never>()
     private let favoritesFetchSignal = PassthroughSubject<Void, Never>()
     private let didTapFavoriteSignal = PassthroughSubject<(Bool, Image), Never>()
@@ -70,7 +71,8 @@ final class ImagesListViewController: UIViewController {
         let input = ImagesListViewModel.Input(
             imagesFetchSignal: imagesFetchSignal, 
             favoritesFetchSignal: favoritesFetchSignal,
-            didTapFavoriteSignal: didTapFavoriteSignal
+            didTapFavoriteSignal: didTapFavoriteSignal, 
+            didSelectImage: didSelectImage
         )
         
         viewModel.transform(input, outputHandler: handleOutput)
@@ -164,7 +166,6 @@ extension ImagesListViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print("tapped")
+        didSelectImage.send((imagesDataSource, indexPath.row))
     }
 }
